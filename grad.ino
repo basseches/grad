@@ -1,12 +1,12 @@
 #include <TFT_eSPI.h> /* Graphics and font library for ST7735 driver chip */
 
 /* PROGMEM arrays for graphics */
-#include "include/graphics/gameplay.h"
-#include "include/graphics/sprite.h"
 #include "include/graphics/background.h"
-#include "include/graphics/win.h"
-#include "include/graphics/lose.h"
+#include "include/graphics/gameplay.h"
 #include "include/graphics/icon.h"
+#include "include/graphics/lose.h"
+#include "include/graphics/sprite.h"
+#include "include/graphics/win.h"
 
 /* Macros, &c. (for analog read processing) */
 #include "include/move.h"
@@ -197,7 +197,7 @@ int check_status()
     return PLAY;
 
   for_each_enemy(i) {
-    if ((x + 10) < enemy[i] + PAPER_WIDTH && (x + SPRITE_WIDTH - 5) > enemy[i]) {
+    if ((x + 10) < enemy[i] + PAPER_WIDTH && (x + SPRITE_WIDTH - 7) > enemy[i]) {
       /* Player just lost. */
       background.fillSprite(TFT_BLACK);
       background.pushSprite(0, 0);
